@@ -1,0 +1,19 @@
+<div class="products">
+  <div class="products__new">
+    <a
+      claas="btn btn__ok"
+      routerLink="./new"
+    >New Pizza</a>
+  </div>
+  <div class="product__list">
+<!--    <pre>{{pizzas | json}}</pre>-->
+    <div *ngIf="!pizzas?.length">
+      No pizzas, add one to get started!
+    </div>
+    <app-pizza-item
+    *ngFor="let pizza of pizzas"
+    [pizza]="pizza"
+    >
+    </app-pizza-item>
+  </div>
+</div>
